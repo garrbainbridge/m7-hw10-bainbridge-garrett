@@ -8,13 +8,13 @@ var noteEl = document.getElementById('notes-area')
 // Retrieve name and note content from cookies and localstorage
 // Then apply them to elements on the page
 // YOUR CODE HERE
-
+nameSpan.textContent=document.cookie || "Your Name"
 
 var newNote = localStorage.getItem('notes')
 if (newNote) {
   noteEl.textContent = newNote
 } else {
-  noteEl.textContent = ' '
+  noteEl.textContent = ''
 }
 
 formEl.onsubmit = function(e) {
@@ -37,7 +37,8 @@ clear.onclick = function() {
   // Clear textarea's value
   // Clear localstorage's content
   // YOUR CODE HERE
-
+noteEl.textContent = ' '
+localStorage.clear()
   // triggers thumbs up animation
   this.classList.add('emoji')
 }
